@@ -2,41 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NodeList
+public class Stack
 {
     Node head;
-    public NodeList()
+    Node top;
+    public Stack()
     {
         head = new Node();
+        top = head;
     }
 
-    public void Insert(int data)
+    public void Push(int data)
     {
         Node nextNode = new Node(data);
-        Top().next = nextNode;
+        top.next = nextNode;
+        top = nextNode;
     }
 
-    public Node Top()
-    {
-        Node node = head;
-        while(node.next != null)
-        {
-            node = node.next;
-        }
-        return node;
-    }
     public int Pop()
     {
-        Node node = Top();
-        int data = node.data;
-        node = null;
-        return data;
-
+        Node node = head;
+        if (IsEmpty())
+        {
+            Debug.Log("Õ»Îª¿Õ");
+            return -1;
+        }
+        {
+            while (node.next!= top)
+            {
+                node = node.next;
+            }
+            top = node;
+            return node.next.data;
+        }
     }
-    public bool Empty()
+    public int Top()
     {
-        return head.next == null;
+        if (IsEmpty())
+        {
+            Debug.Log("Õ»Îª¿Õ");
+            return -1;
+        }
+        else
+        {
+            return top.data;
+        }
     }
+    
+    public bool IsEmpty()
+    {
+        return head == top;
+    }
+
 }
 
 public class Node
