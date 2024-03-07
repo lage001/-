@@ -6,12 +6,12 @@ public class Test : MonoBehaviour
 {
     void Start()
     {
-        Stack list = new Stack();
+        Stack<int> list = new Stack<int>();
         for (int i = 0; i < 5; i++)
         {
             list.Push(i);
         }
         print(list.Pop());
-        print(list.IsEmpty());
+        print(list.Pop());
     }
 }
