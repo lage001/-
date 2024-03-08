@@ -27,6 +27,7 @@ public class Stack
             Debug.Log("Õ»Îª¿Õ");
             return -1;
         }
+        
         {
             while (node.next!= top)
             {
@@ -43,7 +44,7 @@ public class Stack
             Debug.Log("Õ»Îª¿Õ");
             return -1;
         }
-        else
+        
         {
             return top.data;
         }
@@ -53,7 +54,6 @@ public class Stack
     {
         return head == top;
     }
-
 }
 
 public class Node

@@ -11,7 +11,5 @@ public class Test : MonoBehaviour
         {
             list.Push(i);
         }
-        print(list.Pop());
-        print(list.Pop());
     }
 }
